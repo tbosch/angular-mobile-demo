@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- build:css(.tmp) styles/styles.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="non-bower-lib/angular-carousel.css">
+    <link rel="stylesheet" href="nav/navAnimation.css">
+    <link rel="stylesheet" href="views/page1/page1.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="angularMobileDemoApp" ng-controller="NavCtrl as nav">
+
+<!-- Add your site or application content here -->
+<div class="{{nav.directionClass}}" ng-view=""></div>
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="non-bower-lib/rafPolyfill.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="non-bower-lib/angular-scrolly.js"></script>
+<script src="non-bower-lib/angular-carousel.js"></script>
+<script src="non-bower-lib/infinite-scroll.js"></script>
+
+<script src="app.js"></script>
+<script src="nav/navCtrl.js"></script>
+<script src="nav/rafNavAnimation.js"></script>
+<script src="views/page1/page1Ctrl.js"></script>
+<script src="views/page2/page2Ctrl.js"></script>
+<script src="views/page3/page3Ctrl.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

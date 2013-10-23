@@ -1,0 +1,10 @@
+/* bugfix for bootstrap issue https://github.com/twbs/bootstrap/issues/10711 */
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.page {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}

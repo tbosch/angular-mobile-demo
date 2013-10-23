@@ -1,0 +1,27 @@
+<div class="page">
+    <div class="row navbar navbar-inverse">
+        <div class="col-md-4 col-xs-4">
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <h1 class="text-center navbar-text">Main</h1>
+        </div>
+        <div class="col-md-4 col-xs-4">
+            <button ng-click="nav.forward('/page2')" href="" class="btn btn-primary navbar-btn">
+                Page 2
+            </button>
+            <button ng-click="nav.forward('/page3')" href="" class="btn btn-primary navbar-btn">
+                Page 3
+            </button>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="btn-group-vertical col-xs-12">
+            <button type="button"
+                    ng-repeat="todo in todos"
+                    ng-swipe-right="remove($index)"
+                    class="todo btn btn-lg btn-default">
+                {{todo.label}}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+/* TODO add other vendor prefixes! */
+.navForward.ng-enter {
+    -webkit-animation: slideInLeft 0.5s;
+}
+@-webkit-keyframes slideInLeft {
+    0% { -webkit-transform: translateX(-100%); }
+    100% { -webkit-transform: translateX(0); }
+}
+
+
+.navForward.ng-leave {
+    -webkit-animation: slideOutRight 0.5s;
+}
+@-webkit-keyframes slideOutRight {
+    0% { -webkit-transform: translateX(0); }
+    100% { -webkit-transform: translateX(100%); }
+}
+
+
+.navBackward.ng-enter {
+    -webkit-animation: slideInRight 0.5s;
+}
+@-webkit-keyframes slideInRight {
+    0% { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(0); }
+}
+
+
+.navBackward.ng-leave {
+    -webkit-animation: slideOutLeft 0.5s;
+}
+@-webkit-keyframes slideOutLeft {
+    0% { -webkit-transform: translateX(0); }
+    100% { -webkit-transform: translateX(-100%); }
+}

@@ -1,0 +1,12 @@
+/* TODO add other vendor prefixes! */
+.todo.ng-leave {
+    -webkit-animation: removeTodo 1s;
+}
+@-webkit-keyframes removeTodo {
+    0% {
+        -webkit-transform: translateX(0) scale(1);
+    }
+    100% {
+        -webkit-transform: translateX(100%) scale(0);
+    }
+}
