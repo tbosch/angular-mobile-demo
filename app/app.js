@@ -1,6 +1,9 @@
 'use strict';
 
 angular.module('angularMobileDemoApp', ['ngRoute', 'ngAnimate', 'ajoslin.scrolly', 'scroll'])
+  .factory('$anchorScroll', function() {
+    return angular.noop;
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/page1', {
@@ -23,4 +26,15 @@ angular.module('angularMobileDemoApp', ['ngRoute', 'ngAnimate', 'ajoslin.scrolly
   .constant('navigationCssClasses', {
     forward: 'navForward',
     backward: 'navBackward'
+  })
+  /* requestAnimationFrame animations
+  .constant('navigationCssClasses', {
+    forward: 'navForward',
+    backward: 'navBackward'
+  }) */
+  /* Use fastclick.js
+  .run(function() {
+    FastClick.attach(document.body);
   });
+  */
+;
