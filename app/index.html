@@ -7,40 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         .splash {
-            background-color: lightgreen;
-            text-align: center;
-            padding-top: 75px;
             width: 100%;
             height: 100%;
             position: absolute;
-            font-size: 30px;
-            z-index: -1;
             top: 0;
             left: 0;
+            display: none;
+        }
+        [ng-cloak] + .splash {
+            display: block
+        }
+        .splash {
+            background-color: lightgreen;
+            text-align: center;
+            padding-top: 75px;
+            font-size: 30px;
         }
     </style>
-
 </head>
-<body ng-app="angularMobileDemoApp">
+<body ng-app="angularMobileDemoApp" ng-controller="AppCtrl">
 
 <!-- Add your site or application content here -->
-<div class="splash" ng-show="false">
+
+<div bidi-view-animation forward-animation="slide-left" backward-animation="slide-right" ng-view="" ng-cloak></div>
+
+<div class="splash">
     <p>Hello World!</p>
     <p>Loading ...</p>
 </div>
 
-<div ng-class="viewSlideAnimation" ng-view=""></div>
 
 <!-- build:css(.tmp) styles/styles.css -->
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="app.css">
 <link rel="stylesheet" href="non-bower-lib/angular-carousel.css">
-<link rel="stylesheet" href="nav/navAnimation.css">
 <link rel="stylesheet" href="views/page1/page1.css">
+<link rel="stylesheet" href="views/page2/page2.css">
+<link rel="stylesheet" href="views/page3/page3.css">
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="non-bower-lib/rafPolyfill.js"></script>
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
@@ -48,13 +54,14 @@
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="non-bower-lib/angular-scrolly.js"></script>
 <script src="non-bower-lib/angular-carousel.js"></script>
-<script src="non-bower-lib/infinite-scroll.js"></script>
 
 <script src="app.js"></script>
-<script src="nav/rafNavAnimation.js"></script>
-<script src="views/page1/page1Ctrl.js"></script>
-<script src="views/page2/page2Ctrl.js"></script>
-<script src="views/page3/page3Ctrl.js"></script>
+<script src="app-controller.js"></script>
+<script src="views/page1/page1-controller.js"></script>
+<script src="views/page2/page2-controller.js"></script>
+<script src="views/page3/page3-controller.js"></script>
+<script src="common/infinite-scroll-directive.js"></script>
+<script src="common/bidi-view-animation-directive.js"></script>
 <!-- endbuild -->
 
 </body>

@@ -1,7 +1,7 @@
 <div class="page">
     <div class="row navbar navbar-inverse">
         <div class="col-md-4 col-xs-4">
-            <a href="#/page1" href="" class="btn btn-primary navbar-btn pull-left">
+            <a href="#/page1" class="btn btn-primary navbar-btn pull-left">
                 <span class="glyphicon glyphicon-arrow-left"></span>
                 Back
             </a>
@@ -12,24 +12,30 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4 col-xs-4">
-            <h3>Normal</h3>
-            <div style="height:200px; overflow:scroll; border: 3px solid red">
+        <div class="col-md-3 col-xs-3">
+            <h3>Plain</h3>
+            <div class="scroll-plain">
                 <p ng-repeat="text in texts">{{text}}</p>
             </div>
         </div>
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-3 col-xs-3">
+            <h3>Acc.</h3>
+            <div class="scroll-acc">
+                <p ng-repeat="text in texts">{{text}}</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-3">
+            <h3>Infinite</h3>
+            <div class="scroll-infinite" when-scrolled="loadMore()">
+                <p ng-repeat="text in texts">{{text}}</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-3">
             <h3>Fake</h3>
-            <div style="height:200px; overflow:hidden;border: 3px solid green">
+            <div class="scroll-fake">
                 <div scrolly-scroll>
                     <p ng-repeat="text in texts">{{text}}</p>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-xs-4">
-            <h3>Infinite</h3>
-            <div style="height:200px; overflow:scroll; border: 3px solid blue; -webkit-overflow-scrolling: touch" when-scrolled="loadMore()">
-                <p ng-repeat="text in texts">{{text}}</p>
             </div>
         </div>
     </div>

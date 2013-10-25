@@ -1,9 +1,13 @@
 'use strict';
 
-angular.module('angularMobileDemoApp', ['ngRoute', 'ngAnimate', 'ngTouch', "angular-carousel", 'ajoslin.scrolly', 'scroll'])
-  .factory('$anchorScroll', function() {
-    return angular.noop;
-  })
+angular.module('angularMobileDemoApp', [
+    'ngRoute',
+    'ngAnimate',
+    'ngTouch',
+    'angular-carousel',
+    'ajoslin.scrolly',
+    'scroll'
+  ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/page1', {
@@ -25,38 +29,7 @@ angular.module('angularMobileDemoApp', ['ngRoute', 'ngAnimate', 'ngTouch', "angu
         redirectTo: '/page1'
       });
   })
-  .run(function ($rootScope) {
-    $rootScope.viewSlideAnimation = 'slide-left'; //always start the page from the left
-
-    $rootScope.$on('$routeChangeStart', function(e, current, previous) {
-      $rootScope.viewSlideAnimation = solveDirection(current, previous) || $rootScope.viewSlideAnimation;
-    });
-
-    $rootScope.$on('$routeChangeSuccess', function(e, current, previous) {
-      $rootScope.viewSlideAnimation = solveDirection(current, previous, true) || $rootScope.viewSlideAnimation;
-    });
-
-    function solveDirection(current, previous, reverse) {
-      if(previous && current) {
-        return reverse ?
-          (current.depth < previous.depth ? 'slide-left' : 'slide-right') :
-          (current.depth < previous.depth ? 'slide-right' : 'slide-left');
-      }
-    }
-  })
-  /* css3 animations */
-  .constant('navigationCssClasses', {
-    forward: 'navForward',
-    backward: 'navBackward'
-  })
-  /* requestAnimationFrame animations
-  .constant('navigationCssClasses', {
-    forward: 'navForward',
-    backward: 'navBackward'
-  }) */
-  /* Use fastclick.js
-  .run(function() {
-    FastClick.attach(document.body);
+  .run(function () {
+    // FastClick.attach(document.body);
   });
-  */
 

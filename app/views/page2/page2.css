@@ -1,3 +1,15 @@
-.carousel-entry {
-    height: 100px;
+.rn-carousel-slides {
+    height: 200px;
+}
+.carousel-entry1 {
+    background-color: red;
+}
+.carousel-entry2 {
+    background-color: blue;
+}
+.carousel-entry3 {
+    background-color: green
+}
+.carousel-entry4 {
+    background-color: yellow
 }
