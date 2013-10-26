@@ -23,13 +23,40 @@
             padding-top: 75px;
             font-size: 30px;
         }
+        [ng-cloak] {
+            display: none
+        }
     </style>
 </head>
-<body ng-app="angularMobileDemoApp" ng-controller="AppCtrl">
+<body ng-app="angularMobileDemoApp" ng-controller="AppCtrl as app">
 
 <!-- Add your site or application content here -->
+<header ng-cloak>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="app.toggleMenu()">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">{{app.pageTitle}}</span>
+        </div>
 
-<div bidi-view-animation forward-animation="slide-left" backward-animation="slide-right" ng-view="" ng-cloak></div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navbar-collapse" ng-class="{'in': app.menuShown, 'collapse': !app.menuShown}">
+            <ul class="nav navbar-nav">
+                <li ng-class="{'active': app.activeLink('/page1')}"><a href="#/page1">Page1</a></li>
+                <li ng-class="{'active': app.activeLink('/page2')}"><a ng-click="$location.url('/page2')">Page2</a></li>
+                <li ng-class="{'active': app.activeLink('/page3')}"><a href="#/page3">Page3</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="page-container" ng-cloak>
+    <div bidi-view-animation forward-animation="slide-left" backward-animation="slide-right" ng-view=""></div>
+</div>
 
 <div class="splash">
     <p>Hello World!</p>

@@ -3,12 +3,17 @@
     margin-left: 0px;
     margin-right: 0px;
 }
+
+body { padding-top: 70px; }
+
+.page-container {
+    position: relative
+}
+
 .page {
     position: absolute;
-    width: 100%;
-    /* min-height so that on iOS the address bar keeps hidden */
-    min-height: 480px;
     top: 0;
+    width: 100%;
 }
 
 /* TODO add other vendor prefixes! */
