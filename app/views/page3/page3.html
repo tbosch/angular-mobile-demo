@@ -13,17 +13,17 @@
             </div>
         </div>
         <div class="col-md-3 col-xs-3">
-            <h3>Infinite</h3>
-            <div class="scroll-infinite" when-scrolled="loadMore()">
-                <p ng-repeat="text in texts">{{text}}</p>
-            </div>
-        </div>
-        <div class="col-md-3 col-xs-3">
             <h3>Fake</h3>
             <div class="scroll-fake">
                 <div scrolly-scroll>
                     <p ng-repeat="text in texts">{{text}}</p>
                 </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-3">
+            <h3>Infinite</h3>
+            <div class="scroll-infinite" when-scrolled="loadMore()">
+                <p ng-repeat="text in texts">{{text}}</p>
             </div>
         </div>
     </div>
