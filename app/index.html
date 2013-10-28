@@ -8,14 +8,20 @@
     <style>
         .splash {
             width: 100%;
-            height: 100%;
+            /* 100% is not enough for Android 2.3 when the keyboard was shown
+               before the refresh ... */
+            height: 500px;
+            overflow: hidden;
             position: absolute;
             top: 0;
             left: 0;
             display: none;
         }
-        [ng-cloak] + .splash {
-            display: block
+        [ng-cloak].splash {
+            display: block !important;
+        }
+        [ng-cloak] {
+            display: none
         }
         .splash {
             background-color: lightgreen;
@@ -23,14 +29,17 @@
             padding-top: 75px;
             font-size: 30px;
         }
-        [ng-cloak] {
-            display: none
-        }
+
     </style>
 </head>
 <body ng-app="angularMobileDemoApp" ng-controller="AppCtrl as app">
 
 <!-- Add your site or application content here -->
+<div class="splash" ng-cloak>
+    <p>Hello World!</p>
+    <p>Loading ...</p>
+</div>
+
 <header ng-cloak>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,11 +65,6 @@
 
 <div class="page-container" ng-cloak>
     <div bidi-view-animation forward-animation="slide-left" backward-animation="slide-right" ng-view=""></div>
-</div>
-
-<div class="splash">
-    <p>Hello World!</p>
-    <p>Loading ...</p>
 </div>
 
 
